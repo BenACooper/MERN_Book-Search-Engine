@@ -8,7 +8,7 @@ import {
 } from 'react-bootstrap';
 
 // import { getMe, deleteBook } from '../utils/API';
-import { useQuery } from '@apollo/client'; /
+import { useQuery } from '@apollo/client';
 import { GET_ME } from '../utils/queries';
 import { useMutation } from '@apollo/client';
 import { DELETE_BOOK } from '../utils/mutations';
