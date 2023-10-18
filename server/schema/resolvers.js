@@ -3,7 +3,7 @@ const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    user: async (parent, { id, username }) => {
+    me: async (parent, { id, username }) => {
       try {
         const foundUser = await User.findOne({
           $or: [{ _id: id }, { username }],
@@ -52,7 +52,7 @@ const resolvers = {
 
       return { token, user };
     },
-    addBook: async (_, { userId, book }) => {
+    saveBook: async (_, { userId, book }) => {
       try {
         // Find the user by userId and add the book to their savedBooks
         const updatedUser = await User.findOneAndUpdate(
@@ -66,7 +66,7 @@ const resolvers = {
         throw new Error("Failed to save book");
       }
     },
-    removeBook: async (_, { userId, bookId }) => {
+    deleteBook: async (_, { userId, bookId }) => {
       try {
         // Find the user by userId and remove the book with matching bookId
         const updatedUser = await User.findOneAndUpdate(
