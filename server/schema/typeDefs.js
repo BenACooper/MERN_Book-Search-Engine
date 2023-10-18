@@ -23,8 +23,17 @@ type Auth {
   }
 
 type Query {
-    me: [users]
+    me: User
 }
+
+input BookInput {
+    bookId: String
+    authors: [String]
+    description: String
+    title: String
+    image: String
+    link: String
+ }
 
 type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
