@@ -5,6 +5,7 @@ const path = require('path');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
+// const { log } = require('console');
 
 const PORT = process.env.PORT || 3001;
 const app = express();

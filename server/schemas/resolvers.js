@@ -66,7 +66,7 @@ const resolvers = {
         throw new Error("Failed to save book");
       }
     },
-    deleteBook: async (_, { userId, bookId }) => {
+    removeBook: async (_, { userId, bookId }) => {
       try {
         // Find the user by userId and remove the book with matching bookId
         const updatedUser = await User.findOneAndUpdate(
