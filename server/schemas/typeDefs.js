@@ -6,7 +6,7 @@ type User {
     password: String
     bookCount: Int
     savedBooks: [Book]
-    }
+}
 
 type Book {
     bookId: String
@@ -42,3 +42,5 @@ type Mutation {
     removeBook(userId: ID!, bookId: ID!): User
 }
 `;
+
+module.exports = typeDefs;
